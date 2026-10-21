@@ -403,6 +403,21 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
   .legal-grid{grid-template-columns:1fr}
   .modal{padding:28px 24px}
 }
+/* phone & tablet fixes (launch prep) */
+@media(max-width:1040px){.nav-links.open{display:flex}}
+@media(max-width:900px){
+  .two-graphs{grid-template-columns:minmax(0,1fr)}
+  .field input,.field select,.field textarea{font-size:16px}
+  .menu-toggle{min-width:44px;min-height:44px;display:flex !important;align-items:center;justify-content:center}
+  .foot-col a{padding:6px 0;margin-bottom:2px}
+}
+@media(max-width:560px){
+  .calc-readout{flex-wrap:wrap}
+  .calc-metric{flex:1 1 40%}
+  .calc-metric.hero-metric{flex-basis:100%}
+  .rollup-diagram,.calc-card{padding:22px}
+}
+.close-x{min-width:44px;min-height:44px}
 @media(prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important}
   .reveal{opacity:1;transform:none}
@@ -435,7 +450,7 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
       <a href="frontops.html" aria-current="page">FrontOps</a>
       <a href="index.html#apply" class="btn btn-dark nav-cta">Request Invitation</a>
     </div>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks" onclick="(function(b){var n=document.getElementById('navLinks');var open=n.style.display==='flex';n.style.display=open?'none':'flex';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'Open menu':'Close menu');})(this)">☰</button>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
   </div>
 </nav>
 
@@ -610,8 +625,20 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
-const revObs = new IntersectionObserver((entries)=>{ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target); } }); },{threshold:.12});
+const revObs = new IntersectionObserver((entries)=>{ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target); } }); },{threshold:0,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+</script>
+<script>
+/* menu + reveal fallback (launch prep) */
+(function(){var n=document.getElementById('navLinks'),b=document.querySelector('.menu-toggle');if(!n||!b)return;
+function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+b.addEventListener('click',function(){set(!n.classList.contains('open'));});
+n.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){set(false);b.focus();}});
+})();
+(function(){function chk(){var h=window.innerHeight;document.querySelectorAll('.reveal:not(.in)').forEach(function(el){if(el.getBoundingClientRect().top<h*0.98)el.classList.add('in');});}
+var t=0;window.addEventListener('scroll',function(){if(!t){t=requestAnimationFrame(function(){t=0;chk();});}},{passive:true});
+window.addEventListener('resize',chk);window.addEventListener('load',chk);chk();})();
 </script>
 </body>
 </html>
