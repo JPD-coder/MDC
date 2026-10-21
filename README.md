@@ -89,7 +89,7 @@ The page targets **WCAG 2.1 Level AA** and includes: a skip-to-content link, a `
 |---|---|
 | `index.html` | The main marketing page (self-contained: inline CSS and JS) |
 | `frontops.html` | One-page FrontOps ("Technology partner") section; self-contained, same design as `index.html`, legal links point back to `index.html#legal` |
-| `frontops-logo.svg` | FrontOps logo, copied from frontops.io (used on `frontops.html`) |
+| `frontops-logo-dark.svg` | FrontOps Health & Wellness logo, dark-background version, copied from frontops.io (used in the `frontops.html` hero) |
 | `mdc-logo.jpg` | My Doctor's Choice logo as a file (same image embedded in `index.html`; used on `frontops.html`) |
 | `favicon-32.png` | 32×32 browser favicon |
 | `apple-touch-icon.png` | 180×180 iOS home-screen icon |

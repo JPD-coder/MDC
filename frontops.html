@@ -118,7 +118,7 @@ nav{
   mask-image:radial-gradient(900px 500px at 75% 0%,#000,transparent 70%);
   pointer-events:none;
 }
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:56px;align-items:center;padding:82px 0 92px;max-width:820px}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:56px;align-items:center;padding:82px 28px 92px;max-width:820px}
 .hero .eyebrow{color:var(--gold-soft)}
 .hero h1{font-size:clamp(2.5rem,5.2vw,4.2rem);margin:.35em 0 .5em;color:#f2f8f0}
 .hero h1 em{font-style:italic;color:var(--gold-soft);font-weight:500}
@@ -381,7 +381,7 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
 @media(max-width:1180px){.nav-links{gap:.8rem}.nav-links a{font-size:.76rem}.nav-cta{font-size:.78rem !important;padding:.55em .8em}}
 @media(max-width:1040px){.nav-links{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);padding:8px 28px 20px;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(0,0,0,.3)}.nav-links a{padding:12px 0;font-size:.95rem;width:100%}.nav-links a.nav-cta{width:auto;margin-top:10px;padding:.7em 1.2em;color:#fff}.menu-toggle{display:block}}
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;gap:44px;padding:56px 0 64px}
+  .hero-inner{grid-template-columns:1fr;gap:44px;padding:56px 28px 64px}
   .hero p.lead{max-width:none}
   .val-grid,.strip-grid,.support-grid,.exit-cards{grid-template-columns:1fr 1fr}
   .roadmap{grid-template-columns:1fr 1fr;gap:36px 0}
@@ -407,14 +407,14 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
   .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
-.fo-logo{height:56px;width:auto;display:block;margin-bottom:26px;background:#fff;padding:14px 22px;border-radius:14px;box-shadow:0 12px 30px -10px rgba(0,0,0,.4)}
+.fo-logo{height:96px;width:auto;display:block;margin-bottom:30px}
 .fo-steps{grid-template-columns:repeat(5,1fr)}
 .fo-mods{grid-template-columns:repeat(3,1fr)}
 .fo-note{max-width:760px}
 .fo-cta{text-align:center;max-width:720px;margin:0 auto}
 .fo-cta .hero-cta{justify-content:center;margin-top:1.4em}
 @media(max-width:960px){.fo-steps{grid-template-columns:1fr 1fr;row-gap:36px}.fo-steps .step::after{display:none}.fo-mods{grid-template-columns:1fr}.hero p.lead{max-width:none}}
-@media(max-width:560px){.fo-steps{grid-template-columns:1fr}.fo-logo{height:40px}}
+@media(max-width:560px){.fo-steps{grid-template-columns:1fr}.fo-logo{height:64px}}
 </style>
 </head>
 <body>
@@ -442,7 +442,7 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
 <header class="hero">
   <div class="wrap hero-inner">
     <div>
-      <img class="fo-logo" src="frontops-logo.svg" alt="FrontOps Health &amp; Wellness">
+      <img class="fo-logo" src="frontops-logo-dark.svg" alt="FrontOps Health &amp; Wellness">
       <span class="eyebrow">Technology partner</span>
       <h1>Front-office operations for clinics.</h1>
       <p class="lead" style="max-width:46ch">My Doctor's Choice clinics run their front office on FrontOps. One workflow, from survey to pharmacy order: patients, providers and pharmacy each see their own step, and nothing is ordered until a provider approves.</p>
