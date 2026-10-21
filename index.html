@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Doctor's Choice — Grow Your Clinic. Plan Your Exit.</title>
 <meta name="description" content="Transform your clinic or med spa into a My Doctor's Choice Health & Wellness facility. Add medical services, grow EBITDA to $1M+, and exit within 24 months with a private equity partner.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="My Doctor's Choice — Grow Your Clinic. Plan Your Exit.">
+<meta property="og:description" content="Transform your clinic or med spa into a My Doctor's Choice Health &amp; Wellness facility. Add medical services, grow EBITDA to $1M+, and exit within 24 months with a private equity partner.">
+<meta property="og:url" content="https://mydrschoice.com/">
+<meta property="og:image" content="https://mydrschoice.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -365,12 +373,13 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
 .modal .close-x{position:absolute;top:18px;right:20px;background:none;border:none;font-size:1.6rem;line-height:1;color:var(--ink-soft);cursor:pointer;padding:4px}
 .modal .close-x:hover{color:var(--ink)}
 .modal .close-x:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-.modal .review-flag{background:#fdf3f1;border:1px solid #e0b4af;border-radius:6px;padding:12px 16px;font-size:.78rem;color:#8a3a30;margin-bottom:18px}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 
+@media(max-width:1180px){.nav-links{gap:.8rem}.nav-links a{font-size:.76rem}.nav-cta{font-size:.78rem !important;padding:.55em .8em}}
+@media(max-width:1040px){.nav-links{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);padding:8px 28px 20px;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(0,0,0,.3)}.nav-links a{padding:12px 0;font-size:.95rem;width:100%}.nav-links a.nav-cta{width:auto;margin-top:10px;padding:.7em 1.2em;color:#fff}.menu-toggle{display:block}}
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:44px;padding:56px 0 64px}
   .hero p.lead{max-width:none}
@@ -414,6 +423,7 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
       <a href="#challenge">The Challenge</a>
       <a href="#compare">Why My Doctor's Choice</a>
       <a href="#roadmap">The Process</a>
+      <a href="frontops.html">FrontOps</a>
       <a href="#apply" class="btn btn-dark nav-cta">Request Invitation</a>
     </div>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks" onclick="(function(b){var n=document.getElementById('navLinks');var open=n.style.display==='flex';n.style.display=open?'none':'flex';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'Open menu':'Close menu');})(this)">☰</button>
@@ -770,7 +780,7 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
       <div class="form-success" id="formSuccess">
         <div class="check"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l5 5L23 7"/></svg></div>
         <h3>Request received.</h3>
-        <p>Thank you. A member of the WMC Cares team will be in touch shortly to explore whether your practice is a fit.</p>
+        <p>Thank you. A member of the My Doctor's Choice team will be in touch shortly to explore whether your practice is a fit.</p>
       </div>
     </form>
   </div>
@@ -816,11 +826,10 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
   <div class="modal">
     <button class="close-x" aria-label="Close" onclick="closeModal('privacyModal')">&times;</button>
     <h2 id="privacyTitle">Privacy Policy</h2>
-    <div class="modal-sub">Last updated: <span class="pp-date"></span></div>
-    <div class="review-flag">Template for review — have counsel confirm this matches your actual data practices and the laws of the states where you operate (e.g., CCPA/CPRA, other state privacy laws) before publishing.</div>
+    <div class="modal-sub">Last updated: <span class="pp-date">October 21, 2026</span></div>
     <p>This Privacy Policy explains how My Doctor's Choice ("we," "us," or "our") collects, uses, and discloses information in connection with this website.</p>
     <h3>Information we collect</h3>
-    <p>When you submit the invitation request form, we collect the information you provide, such as your name, email address, phone number, practice name, practice type, and state. We may also collect limited technical information automatically, such as IP address, browser type, and pages visited, through standard web analytics.</p>
+    <p>When you submit the invitation request form, we collect the information you provide, such as your name, email address, phone number, practice name, practice type, and state. Our website host may automatically log limited technical information, such as IP address and browser type, for security and operations.</p>
     <h3>How we use information</h3>
     <ul>
       <li>To respond to your inquiry and evaluate whether the program is a fit;</li>
@@ -843,8 +852,7 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
   <div class="modal">
     <button class="close-x" aria-label="Close" onclick="closeModal('termsModal')">&times;</button>
     <h2 id="termsTitle">Terms of Use</h2>
-    <div class="modal-sub">Last updated: <span class="pp-date"></span></div>
-    <div class="review-flag">Template for review — have counsel adapt governing law, dispute resolution, and liability terms to your entity and jurisdiction before publishing.</div>
+    <div class="modal-sub">Last updated: <span class="pp-date">October 21, 2026</span></div>
     <p>By accessing or using this website, you agree to these Terms of Use. If you do not agree, do not use the site.</p>
     <h3>Informational purpose only</h3>
     <p>All content is provided for general informational purposes and is not medical, legal, tax, accounting, or investment advice. See the Medical Disclaimer and the financial disclosures on this site, which are incorporated here by reference. Nothing on this site creates a provider-patient, attorney-client, or advisory relationship, and nothing is an offer to sell or a solicitation to buy any security or service.</p>
@@ -863,7 +871,7 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
   <div class="modal">
     <button class="close-x" aria-label="Close" onclick="closeModal('accessibilityModal')">&times;</button>
     <h2 id="a11yTitle">Accessibility Statement</h2>
-    <div class="modal-sub">Last updated: <span class="pp-date"></span></div>
+    <div class="modal-sub">Last updated: <span class="pp-date">October 21, 2026</span></div>
     <p>We are committed to making this website accessible to the widest possible audience and strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.</p>
     <p>We are continually working to improve the accessibility of our content. If you encounter any difficulty using this site, or need information provided in an alternative format, please contact us using the details in the website footer, and we will work to provide the information or assistance you need.</p>
   </div>
@@ -889,13 +897,13 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
           <a href="#challenge">The Challenge</a>
           <a href="#compare">Why My Doctor's Choice</a>
           <a href="#roadmap">The Process</a>
+          <a href="frontops.html">FrontOps</a>
           <a href="#apply">Request Invitation</a>
         </div>
         <div class="foot-col">
           <h4>Get started</h4>
           <a href="#apply">Request invitation</a>
-          <a href="mailto:Jeff@WMCcares.com">Email us</a>
-          <a href="tel:+15616296212">(561) 629-6212</a>
+          <a href="mailto:contact@mydrschoice.com">Email us</a>
         </div>
         <div class="foot-col">
           <h4>Legal</h4>
@@ -917,11 +925,7 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-// Legal modal date + open/close
-(function(){
-  var d = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-  document.querySelectorAll('.pp-date').forEach(function(el){ el.textContent = d; });
-})();
+// Legal modal open/close
 var _lastFocus = null;
 function openModal(id){
   var m = document.getElementById(id);
