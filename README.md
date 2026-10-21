@@ -94,3 +94,5 @@ The page targets **WCAG 2.1 Level AA** and includes: a skip-to-content link, a `
 | `favicon-32.png` | 32×32 browser favicon |
 | `apple-touch-icon.png` | 180×180 iOS home-screen icon |
 | `og-image.png` | 1200×630 social share image (Open Graph / Twitter card) |
+| `robots.txt` | Lets search engines crawl the site and points them to the sitemap |
+| `sitemap.xml` | List of the site's pages for search engines (update `lastmod` when pages change) |
