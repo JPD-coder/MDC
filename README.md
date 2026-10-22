@@ -80,3 +80,19 @@ The page targets **WCAG 2.1 Level AA** and includes: a skip-to-content link, a `
 | **Dependencies** | None (Google Fonts via CDN, optional) |
 | **Assets** | Logo embedded as base64 (no external files) |
 | **Entry point** | `index.html` |
+
+---
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `index.html` | The main marketing page (self-contained: inline CSS and JS) |
+| `frontops.html` | One-page FrontOps ("Technology partner") section; self-contained, same design as `index.html`, legal links point back to `index.html#legal` |
+| `frontops-logo-dark.svg` | FrontOps Health & Wellness logo, dark-background version, copied from frontops.io (used in the `frontops.html` hero) |
+| `mdc-logo.jpg` | My Doctor's Choice logo as a file (same image embedded in `index.html`; used on `frontops.html`) |
+| `favicon-32.png` | 32×32 browser favicon |
+| `apple-touch-icon.png` | 180×180 iOS home-screen icon |
+| `og-image.png` | 1200×630 social share image (Open Graph / Twitter card) |
+| `robots.txt` | Lets search engines crawl the site and points them to the sitemap |
+| `sitemap.xml` | List of the site's pages for search engines (update `lastmod` when pages change) |
