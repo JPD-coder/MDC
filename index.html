@@ -335,6 +335,10 @@ form.card .btn{width:100%;justify-content:center;margin-top:6px}
 .form-success h3{font-size:1.4rem;margin-bottom:.4em}
 .form-success p{color:var(--ink-soft)}
 .form-fine{font-size:.74rem;color:var(--ink-soft);margin-top:12px;text-align:center}
+.hp-field{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.form-error{margin-top:14px;padding:12px 14px;border-radius:4px;background:#fdecec;color:#8a1f1f;font-size:.9rem}
+.form-error a{color:#8a1f1f;font-weight:600}
+.btn[disabled]{opacity:.7;cursor:wait;transform:none}
 
 /* FOOTER */
 footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
@@ -795,7 +799,9 @@ footer{background:var(--ink);color:#b7c7b8;padding:48px 0 32px}
           </div>
         </div>
         <div class="field"><label for="msg">Anything we should know? (optional)</label><textarea id="msg" name="msg" rows="3"></textarea></div>
+        <div class="hp-field" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn btn-primary">Request my invitation →</button>
+        <p class="form-error" id="formError" role="alert" tabindex="-1" hidden>Sorry, your request didn't go through. Please try again, or email us at <a href="mailto:contact@mydrschoice.com">contact@mydrschoice.com</a>.</p>
         <p class="form-fine">By submitting, you agree to be contacted about the program and acknowledge our <a href="#legal" onclick="openModal('privacyModal');return false;" style="color:var(--green-text)">Privacy Policy</a> and <a href="#legal" onclick="openModal('termsModal');return false;" style="color:var(--green-text)">Terms of Use</a>.</p>
       </div>
       <div class="form-success" id="formSuccess">
@@ -1023,10 +1029,24 @@ const revObs = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
 
 // Form submit (front-end only demo)
+var FORM_ENDPOINT='__FORM_ENDPOINT__';
+var leadSending=false;
 function submitLead(e){
   e.preventDefault();
-  document.getElementById('formFields').style.display='none';
-  document.getElementById('formSuccess').classList.add('show');
+  if(leadSending) return false;
+  var f=document.getElementById('leadForm'), btn=f.querySelector('button[type=submit]'), err=document.getElementById('formError');
+  var data={}; ['fname','lname','email','phone','clinic','type','state','msg','website'].forEach(function(k){var el=f.elements[k]; data[k]=el?el.value:'';});
+  leadSending=true; btn.disabled=true; var label=btn.textContent; btn.textContent='Sending…'; err.hidden=true;
+  fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(j){if(!r.ok||!j.ok) throw new Error((j&&j.error)||('HTTP '+r.status)); });})
+    .then(function(){
+      document.getElementById('formFields').style.display='none';
+      var ok=document.getElementById('formSuccess'); ok.classList.add('show'); ok.setAttribute('tabindex','-1'); ok.focus();
+    })
+    .catch(function(){
+      err.hidden=false; err.focus();
+    })
+    .then(function(){leadSending=false; btn.disabled=false; btn.textContent=label;});
   return false;
 }
 </script>
